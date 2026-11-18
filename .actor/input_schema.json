@@ -1,0 +1,87 @@
+{
+  "title": "Brazil Central Bank (BCB) Macro & Rates Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "mode": {
+      "title": "Dataset Mode",
+      "type": "string",
+      "description": "Choose SGS macroeconomic series (Selic, CDI, IPCA), Focus Market Expectations, Bank Credit Interest Rates, or PTAX FX rates.",
+      "enum": [
+        "focus_expectations",
+        "sgs_series",
+        "bank_interest_rates",
+        "ptax_fx"
+      ],
+      "default": "focus_expectations",
+      "prefill": "focus_expectations"
+    },
+    "sgsCode": {
+      "title": "SGS Series Code",
+      "type": "integer",
+      "description": "Official BCB SGS code for sgs_series mode (432=Selic Meta, 12=CDI, 433=IPCA, 189=IGP-M, 24369=Unemployment, 21082=Delinquency).",
+      "default": 432,
+      "minimum": 1
+    },
+    "lastN": {
+      "title": "Last N Data Points",
+      "type": "integer",
+      "description": "Number of most recent observations to fetch in sgs_series mode.",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 500
+    },
+    "indicator": {
+      "title": "Focus Indicator Filter",
+      "type": "string",
+      "description": "Optional indicator filter in focus_expectations mode (e.g. IPCA, Selic, PIB Total, Câmbio, IGP-M).",
+      "editor": "textfield",
+      "default": ""
+    },
+    "currency": {
+      "title": "PTAX Currency Code",
+      "type": "string",
+      "description": "Currency symbol for ptax_fx mode (e.g. USD, EUR, GBP, JPY, CHF).",
+      "editor": "textfield",
+      "default": "USD"
+    },
+    "startDate": {
+      "title": "Start Date (MM-DD-YYYY or YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional start date for ptax_fx mode (defaults to 15 days ago).",
+      "editor": "textfield",
+      "default": ""
+    },
+    "endDate": {
+      "title": "End Date (MM-DD-YYYY or YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional end date for ptax_fx mode (defaults to today).",
+      "editor": "textfield",
+      "default": ""
+    },
+    "query": {
+      "title": "Institution, Modality, or Keyword Filter",
+      "type": "string",
+      "description": "Optional case-insensitive filter across bank name, credit modality, or indicator.",
+      "editor": "textfield",
+      "default": ""
+    },
+    "maxResults": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum number of normalized rows returned.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "timeoutSecs": {
+      "title": "Request Timeout (Seconds)",
+      "type": "integer",
+      "description": "HTTP timeout in seconds when calling BCB endpoints.",
+      "default": 30,
+      "minimum": 5,
+      "maximum": 60
+    }
+  },
+  "required": ["mode"]
+}

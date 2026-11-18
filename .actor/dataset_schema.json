@@ -1,0 +1,33 @@
+{
+  "actorSpecification": 1,
+  "views": {
+    "overview": {
+      "title": "Brazil Central Bank (BCB) Records",
+      "transformation": {
+        "fields": [
+          "recordType",
+          "referenceDate",
+          "metric",
+          "entityOrModality",
+          "valuePrimary",
+          "valueSecondary",
+          "spreadBpsOrChange",
+          "sourceUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "recordType": { "label": "Mode", "format": "text" },
+          "referenceDate": { "label": "Date / Year", "format": "text" },
+          "metric": { "label": "Indicator / Code", "format": "text" },
+          "entityOrModality": { "label": "Bank / Currency / Detail", "format": "text" },
+          "valuePrimary": { "label": "Primary Value", "format": "number" },
+          "valueSecondary": { "label": "Secondary Value", "format": "number" },
+          "spreadBpsOrChange": { "label": "Spread bps / Change", "format": "number" },
+          "sourceUrl": { "label": "Official BCB Source", "format": "link" }
+        }
+      }
+    }
+  }
+}

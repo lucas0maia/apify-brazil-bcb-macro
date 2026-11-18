@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Brazil Central Bank (BCB) Macro Output",
+  "properties": {
+    "dataset": {
+      "type": "string",
+      "title": "BCB Macro & Rates Dataset",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

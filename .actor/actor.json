@@ -1,0 +1,22 @@
+{
+  "actorSpecification": 1,
+  "name": "apify-brazil-bcb-macro",
+  "title": "Brazil Central Bank (BCB) — Selic, PTAX, Focus & Bank Rates",
+  "description": "Extract official Brazilian Central Bank (Banco Central do Brasil) macro time series (SGS: Selic, CDI, IPCA, IGP-M), Focus Market Expectations, FX PTAX buy/sell spreads, and bank credit interest rates directly via JSON/OData with MCP support.",
+  "version": "0.0",
+  "buildTag": "latest",
+  "meta": {
+    "templateId": "python-start",
+    "generatedBy": "Antigravity"
+  },
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "defaultMemoryMbytes": 512,
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp"
+}
